@@ -1,0 +1,24 @@
+select * from employees;
+select * from departments;
+
+-- a. Çalışanların sadece FirstName, LastName ve Salary bilgilerini getiren bir SQL sorgusu
+
+select first_name, last_name, salary from employees;
+
+-- b. Çalışanların çalıştıkları departmanları benzersiz olarak listeleyen bir SQL sorgusu
+
+select distinct(department_name) from departments;
+
+-- c. Sadece IT departmanında çalışanların bilgilerini getiren bir SQL sorgusu
+
+select * from employees where department_id = 6;
+
+select * from employees where department_id = (select department_id from departments where department_name = 'IT');
+
+-- d. Çalışanları maaşlarına göre büyükten küçüğe sıralayan bir SQL sorgusu
+
+select * from employees order by salary desc;
+
+-- e. Çalışanların FirstName ve LastName alanlarını birleştirerek, tam adlarını içeren yeni bir kolon oluşturan bir SQL sorgusu
+
+select first_name || ' ' || last_name from employees;
